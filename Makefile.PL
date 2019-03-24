@@ -21,6 +21,7 @@ my %WriteMakefileArgs = (
   "NAME" => "DNS::Exfil",
   "PREREQ_PM" => {
     "Carp" => 0,
+    "Data::Printer" => 0,
     "Getopt::Long" => 0,
     "MIME::Base32" => 0,
     "Net::DNS" => 0,
@@ -41,6 +42,7 @@ my %WriteMakefileArgs = (
 
 my %FallbackPrereqs = (
   "Carp" => 0,
+  "Data::Printer" => 0,
   "Getopt::Long" => 0,
   "MIME::Base32" => 0,
   "Net::DNS" => 0,
