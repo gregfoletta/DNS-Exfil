@@ -14,7 +14,7 @@ my %WriteMakefileArgs = (
   },
   "DISTNAME" => "DNS-Exfil",
   "EXE_FILES" => [
-    "bin/exfil.pl"
+    "bin/exfil"
   ],
   "LICENSE" => "perl",
   "MIN_PERL_VERSION" => "5.010",
