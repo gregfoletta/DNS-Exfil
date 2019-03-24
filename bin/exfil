@@ -1,0 +1,59 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use 5.010;
+use Getopt::Long;
+use Pod::Usage;
+use Carp;
+
+# VERSION: .1
+# PODNAME: exfil.pl
+# ABSTRACT: Exfiltrate content out through DNS.
+
+use DNS::Exfil;
+
+=head1 NAME
+
+blah.pl - A script that does something
+
+=head1 SYNOPSIS
+
+./blah.pl [options] [file ...]
+
+ Options:
+  -o|--option
+
+=head1 OPTIONS
+
+=over 4
+
+=item B<-o|--option>
+
+An option.
+
+=back
+
+=head1 DESCRIPTION
+
+B<blah.pl> will do something
+
+=cut
+
+my %args;
+
+GetOptions(
+    "listener", \$args{listener},
+    "domain=s", \$args{domain},
+    "help" => sub { pod2usage(1) }
+) or pod2usage(2);
+
+use Data::Printer; p %args;
+
+
+if ($args{listener}) {
+    DNS::Exfil::listener(%args);
+} else {
+    DNS::Exfil::client(%args);
+}
+
